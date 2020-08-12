@@ -1,0 +1,14 @@
+.hidden{
+    display: none;
+}
+p{
+    margin: 0px;
+    padding: 5px;
+}
+h3{
+    margin: 15px 0px 0px 0px;
+    padding: 0px;
+}
+.close{
+    padding: 0px;
+}

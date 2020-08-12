@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nearby Parks</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+   <header>
+       <h1>Find National Parks by State</h1>
+   </header>
+   <section>
+       <form id="js-form">
+           <div class="input">
+                <input type="text" maxlength="2" name="state" id="js-state1">
+                <label for="state">State</label>
+            </div>
+            <br>
+            <input type="text" name="maxResults" id="js-max-results" value="10">
+            <label for="maxResults">Maximum Results</label>
+            <div>
+            <button id="js-add-state">Add State</button>
+            
+           <button type="submit" id="js-submit">Submit</button>
+        </div>
+       </form>
+   </section>
+   <p id="js-error"></p>
+   <section class="hidden" id="js-results">
+        <h2>Results</h2>
+        <ul id="js-results-list">
+
+        </ul>
+
+   </section>
+
+</div>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+   <script src="index.js"></script> 
+</body>
+</html>
