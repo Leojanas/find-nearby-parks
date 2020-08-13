@@ -11,22 +11,23 @@
    <header>
        <h1>Find National Parks by State</h1>
    </header>
-   <section>
+   <div>
        <form id="js-form">
            <div class="input">
-                <input type="text" maxlength="2" name="state" id="js-state1">
-                <label for="state">State</label>
+                <input type="text" maxlength="2" id="js-state1">
+                <label for="js-state1">State </label>
             </div>
             <br>
-            <input type="text" name="maxResults" id="js-max-results" value="10">
-            <label for="maxResults">Maximum Results</label>
+            <input type="text" id="js-max-results" value="10">
+            <label for="js-max-results">Maximum Results</label>
             <div>
             <button id="js-add-state">Add State</button>
             
            <button type="submit" id="js-submit">Submit</button>
         </div>
        </form>
-   </section>
+    </div>
+    <p id="js-loading"></p>
    <p id="js-error"></p>
    <section class="hidden" id="js-results">
         <h2>Results</h2>

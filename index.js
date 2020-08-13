@@ -1,4 +1,5 @@
-//JS code for searching National Parks by state
+//JS code for searching National Parks by state\
+"use strict";
 let stateCounter = 1;
 const stateCode = [];
 const baseURL =  "https://developer.nps.gov/api/v1/parks"
@@ -6,6 +7,8 @@ const api_key = "ZW1Kwvd9LoNKpDjaknmD1vJ5FaRW0HdsZaOyamFB"
 
 //display results function to update the HTML and display the results
 function displayResults(response){
+    $('#js-loading').empty();
+    $('.loader').addClass('hidden');
     $('.input').html(`<input type="text" maxlength="2" name="state" id="js-state1">
     <label for="state">State</label>`)
     $('#js-results-list').empty();
@@ -15,7 +18,7 @@ function displayResults(response){
         $('#js-results-list').append(`<li><h3>${response.data[i].fullName}</h3>
         <p>States: ${response.data[i].states}</p>
         <p>${response.data[i].description}</p>
-        <a href="${response.data[i].url}">${response.data[i].url}</a>
+        <a href="${response.data[i].url}" target="_blank">${response.data[i].url}</a>
         <p>Mailing Address</p>
         <p class="close">${response.data[i].addresses[0].line1}</p>
         <p class="close">${response.data[i].addresses[0].city}, ${response.data[i].addresses[0].stateCode} ${response.data[i].addresses[0].postalCode}</p>
@@ -73,6 +76,7 @@ function watchForm(){
     })
     $('#js-submit').click(event => {
         event.preventDefault();
+        $('#js-loading').html('Searching for results...')
         getParks();
     })
 }
